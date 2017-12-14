@@ -7,12 +7,12 @@ OpenLdap şifre politikaları dinamik olarak yüklenebilen bir modüle sahiptir.
 
 Eğer ldap eski versiyonsa konfigürasyon slapd.conf üzerinden diğer durumda olc (online configuration databes) ile yaplır.
 ### OpenLDAP - OLC
-** 1.Adım: **  OpenLdap sunucusunda **/etc/ldap/schema/ppolicy.ldif** dizini altında bulunan ppolicy şeması 
+**1.Adım:**  OpenLdap sunucusunda **/etc/ldap/schema/ppolicy.ldif** dizini altında bulunan ppolicy şeması 
 <pre><b>ldapmodify -a -x -D "cn=admin,cn=config" -W -f /etc/ldap/schema/ppolicy.ldif</b></pre>
 
 komutu kullanılarak sisteme eklenir.
 
-** 2.Adım:** ppolicymodule.ldif dosyası oluşturulur ve ldif içeriği;
+**2.Adım:** ppolicymodule.ldif dosyası oluşturulur ve ldif içeriği;
 <pre><i>dn: cn=module{0},cn=config
 changetype: modify
 add: olcModuleLoad
@@ -24,7 +24,7 @@ olcModuleLoad: ppolicy
 
 komutu kullanılarak sisteme eklenir.
 
-** 3.Adım: ** ppolicyoverlay.ldif dosyası oluşturulur. Ldif içeriği ;
+**3.Adım:** ppolicyoverlay.ldif dosyası oluşturulur. Ldif içeriği ;
 
 <pre><i>dn: olcOverlay={0}ppolicy,olcDatabase={1}hdb,cn=config
 objectClass: olcOverlayConfig
