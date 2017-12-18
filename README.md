@@ -49,5 +49,48 @@ komutu kullanılarak slapd servisi yeniden başlatılmalıdır.
 
 #### DefaultPolicy Düğümü Oluşturma
 
+DefaultPolicy düğümü için defaultpolicy.ldif dosyası oluşturulur ve dosya içeriği;
+<pre><i>
+dn: ou=PasswordPolicies,dc=tuncay,dc=colak
+objectClass: organizationalUnit
+objectClass: top
+ou: PasswordPolicies
+description: password policy group
+
+dn: cn=DefaultPolicy,ou=PasswordPolicies,dc=tuncay,dc=colak
+objectClass: person
+objectClass: pwdPolicy
+objectClass: top
+cn: DefaultPolicy
+pwdAttribute: userPassword
+sn: DefaultPolicy
+description: default password policy
+pwdAllowUserChange: TRUE
+pwdCheckQuality: 0
+pwdExpireWarning: 0
+pwdFailureCountInterval: 0
+pwdGraceAuthNLimit: 2
+pwdInHistory: 3
+pwdLockout: TRUE
+pwdLockoutDuration: 300
+pwdMaxAge: 30000
+pwdMaxFailure: 3
+pwdMinAge: 0
+pwdMinLength: 4
+pwdMustChange: TRUE
+pwdSafeModify: FALSE
+</i></pre>
+
+şeklinde düzenlenir. Ldif oluşturulduğuğu dizinde ,
+
+<pre><b>ldapadd -x -W -D "cn=admin,dc=tuncay,dc=colak" -f defaultpolicy.ldif</b></pre>
+
+komutu kullanılarak sisteme eklenir.
+
+**Örnek:** default ppolicy attribute
+
+![ppolicy.png](./ppolicy.png)
+
+
 
 
