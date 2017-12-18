@@ -81,7 +81,7 @@ pwdMustChange: TRUE
 pwdSafeModify: FALSE
 </i></pre>
 
-şeklinde düzenlenir. Ldif oluşturulduğuğu dizinde ,
+şeklinde düzenlenir. Ldif oluşturulduğu dizinde admin kullanıcısı ile
 
 <pre><b>ldapadd -x -W -D "cn=admin,dc=tuncay,dc=colak" -f defaultpolicy.ldif</b></pre>
 
