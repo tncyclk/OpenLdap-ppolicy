@@ -87,7 +87,7 @@ pwdSafeModify: FALSE
 
 komutu kullanılarak sisteme eklenir.
 
-**Örnek:** default ppolicy attribute
+**Örnek:** default ppolicy entry
 
 
 ![ppolicy.png](./images/ppolicy.png)
