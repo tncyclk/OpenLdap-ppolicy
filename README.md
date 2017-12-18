@@ -89,7 +89,8 @@ komutu kullanılarak sisteme eklenir.
 
 **Örnek:** default ppolicy attribute
 
-![ppolicy.png](./ppolicy.png)
+
+![ppolicy.png](./images/ppolicy.png)
 
 
 
